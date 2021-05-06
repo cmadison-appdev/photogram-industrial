@@ -19,6 +19,14 @@ class PhotosController < ApplicationController
   def edit
   end
 
+  def liked
+    @user = User.find_by!(username: params.fetch(:username))
+  end
+
+  def feed
+    @user = User.find_by!(username: params.fetch(:username))
+  end
+
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
