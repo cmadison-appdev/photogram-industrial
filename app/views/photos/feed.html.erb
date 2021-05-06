@@ -1,7 +1,7 @@
-<%= render "shared/tabs", current_tab: "posts" %>
+<%= render "shared/tabs", current_tab: "feed" %>
 
 <p class="text-center text-secondary mt-2">
-  Currently viewing: <%= current_user.feed.count %> photos
+  Currently viewing <%= current_user.feed.count %> photos posted by users you follow
 </p>
 
 <% current_user.feed.each do |photo| %>
