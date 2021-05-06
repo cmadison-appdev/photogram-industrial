@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col-md-6 offset-md-3">
+    <h1>
+      <%= @user.username %>
+    </h1>
+    
+    <ul class="nav nav-pills nav-justified">
+    
+      <li class="nav-item">
+        <%= link_to 'Posts', user_path(@user.username), class:"nav-link#{' active' if current_tab == 'posts'}" %>
+      </li>
+      
+      <li class="nav-item">
+        <%= link_to 'Liked photos', liked_photos_path(@user.username), class:"nav-link#{' active' if current_tab == 'liked photos'}" %>
+      </li>
+      
+      <li class="nav-item">
+        <%= link_to 'Feed', feed_photos_path(@user.username), class:"nav-link#{' active' if current_tab == 'feed'}" %>
+      </li>
+      
+      <li class="nav-item">
+        <%= link_to 'Followers', followers_users_path(@user.username), class:"nav-link#{' active' if current_tab == 'followers'}" %>
+      </li>
+      
+      <li class="nav-item">
+        <%= link_to 'Following', following_users_path(@user.username), class:"nav-link#{' active' if current_tab == 'following'}" %>
+      </li>
+    
+    </ul>
+ </div>
+</div>
