@@ -1,7 +1,13 @@
 <%= render "shared/tabs", current_tab: "followers" %>
 
 <p class="text-center text-secondary mt-2">
-  You have <%= current_user.followers.count %> followers.
+  You have <%= 
+  if current_user.followers.count == 1
+    "1 follower"
+  else 
+    current_user.followers.count.to_s + " followers"
+  end
+    %> 
 </p>
 
 <% current_user.followers.each do |follower| %>
