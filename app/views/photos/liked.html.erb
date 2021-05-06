@@ -1,0 +1,9 @@
+<%= render "shared/tabs", current_tab: "liked photos" %>
+
+<p class="text-center text-secondary mt-2">
+  You have liked <%= current_user.liked_photos.count %> photos
+</p>
+
+<% current_user.liked_photos.each do |photo| %>
+  <%= render "photos/photo", photo: photo %>
+<% end %>

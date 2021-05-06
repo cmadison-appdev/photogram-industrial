@@ -1,0 +1,15 @@
+<%= render "shared/tabs", current_tab: "following" %>
+
+<p class="text-center text-secondary mt-2">
+  You follow <%= 
+  if current_user.leaders.count == 1
+    "1 user"
+  else 
+    current_user.leaders.count.to_s + " users"
+  end
+   %>
+</p>
+
+<% current_user.leaders.each do |leader| %>
+  <%= render "users/list", the_user: leader %>
+<% end %>
